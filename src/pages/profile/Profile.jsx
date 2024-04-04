@@ -15,9 +15,6 @@ export default function Profile() {
   const username = useParams().username;
   // console.log(params);
 
-
-
-
   useEffect(() => {
     const fetchUser = async () => {
       // const res = await axios.get(`users/${post.userId}`);
@@ -27,14 +24,10 @@ export default function Profile() {
       const res = await axios.get(`/users?username=${username}`);
 
       setUser(res.data);
-      console.log(res.data);
+      // console.log(res.data);
     };
     fetchUser();
   }, [username]);
-
-
-
-
 
   return (
     <>
@@ -45,22 +38,22 @@ export default function Profile() {
           <div className="profileRightTop">
             <div className="profileCover">
               <img
-                src={user.coverPicture || PUBLIC_FOLDER + "/post/3.jpeg"} //デフォルト画像は決めてない。
+                src={PUBLIC_FOLDER + user.coverPicture || PUBLIC_FOLDER + "post/3.jpeg"} //デフォルト画像は決めてない。
                 alt=""
                 className="profileCoverImg"
               />
               <img
                 src={
                   user.profilePicture
-                    ? PUBLIC_FOLDER + user.profilePicture
-                    : PUBLIC_FOLDER + "/person/noAvatar.png"
+                  ? PUBLIC_FOLDER + user.profilePicture
+                  : PUBLIC_FOLDER + "person/noAvatar.png"
                 }
                 alt=""
                 className="profileUserImg"
               />
             </div>
             <div className="profileInfo">
-              <h4 className="profileInfoName">{user.username}</h4>
+              <span className="profileInfoName">{user.username}</span>
               <span className="profileInfoDesc">{user.desc}</span>
             </div>
           </div>

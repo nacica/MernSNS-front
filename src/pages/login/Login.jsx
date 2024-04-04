@@ -10,7 +10,7 @@ export default function Login() {
 
 
   // eslint-disable-next-line
-  const { user, isFetching, error, dispatch } = useContext(AuthContext);
+  const { user, dispatch } = useContext(AuthContext);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -21,7 +21,7 @@ export default function Login() {
     );
   };
 
-  console.log(user); //ユーザーがログインしてる状態ですね！！！
+  console.log(user); //ユーザーがログインしてる状態
   return (
     <div className="login">
       <div className="loginWrapper">
@@ -32,6 +32,8 @@ export default function Login() {
         <div className="loginRight">
           <form className="loginBox" onSubmit={(e) => handleClick(e)}>
             <p className="loginMsg">ログインはこちら</p>
+            <p className="loginMsg idpass">Eメール 　:　a@gmail.com</p>
+            <p className="loginMsg idpass">パスワード　:　123456</p>
             <input
               type="email"
               className="loginInput"
@@ -49,8 +51,13 @@ export default function Login() {
             />
             <button className="loginButton">ログイン</button>
             <span className="loginForgot">パスワードを忘れた方へ</span>
-            <button className="loginRegisterButton">アカウント作成</button>
+
           </form>
+          <button 
+             className="loginRegisterButton"
+             onClick={() => window.location.href = "http://localhost:3000/register"}>
+              アカウント作成
+          </button>
         </div>
       </div>
     </div>

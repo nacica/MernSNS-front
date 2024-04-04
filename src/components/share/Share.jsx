@@ -72,7 +72,7 @@ import {
           <form
             className="shareButtons"
             onSubmit={(e) => handleSubmit(e)}
-            // encType="multipart/form-data"
+            encType="multipart/form-data"
           >
             <div className="shareOptions">
               <label htmlFor="file" className="shareOption">

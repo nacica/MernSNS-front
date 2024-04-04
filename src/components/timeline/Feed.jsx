@@ -21,30 +21,13 @@ export default function Feed({username}) {
 
       setPosts(
         response.data
-        //   .sort((p1, p2) => {
-        //   return new Date(p2.createdAt) - new Date(p1.createdAt);
-        // })
+          .sort((p1, p2) => {
+          return new Date(p2.createdAt) - new Date(p1.createdAt);
+        })
       );
     };
     fetchPosts();
   }, [username,user._id]);
-
-
-  // useEffect(() => {
-  //   const fetchPosts = async () => {
-  //     const res = username
-  //       ? await axios.get(`/posts/profile/${username}`) //プロフィールの場合
-  //       : await axios.get(`/posts/timeline/${user._id}`); //ホームの場合
-
-  //     setPosts(
-  //       res.data
-        //   .sort((p1, p2) => {
-        //   return new Date(p2.createdAt) - new Date(p1.createdAt);
-        // })
-      // );
-    // };
-    // fetchPosts();
-  // }, []);
 
   return (
     <div className="feed">

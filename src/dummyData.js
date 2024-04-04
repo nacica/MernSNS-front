@@ -1,30 +1,36 @@
 export const Users = [
-    // {
-    //   id: 1,
-    //   profilePicture: "person/1.jpeg",
-    //   username: "Minamino",
-    // },
-    // {
-    //   id: 2,
-    //   profilePicture: "person/5.jpeg",
-    //   // profilePicture: "assets/person/2.jpeg",
-    //   username: "Mitoma",
-    // },
+    {
+      id: 1,
+      profilePicture: "person/endou.png",
+      username: "遠藤航",
+    },
+    {
+      id: 2,
+      profilePicture: "person/kubo.png",
+      username: "久保建英",
+    },
     {
       id: 3,
-      profilePicture: "person/3.jpeg",
-      username: "Endou",
+      profilePicture: "person/nagatomo.png",
+      username: "長友佑都",
     },
     {
       id: 4,
-      profilePicture: "person/4.jpeg",
-      username: "Tomiyasu",
+      profilePicture: "person/tomiyasu.png",
+      username: "冨安健洋",
     },
     {
       id: 5,
-      profilePicture: "person/5.jpeg",
-      username: "Morita",
+      profilePicture: "person/maeda.png",
+      username: "前田大然",
     },
+
+    
+
+
+
+
+
   ];
   
   export const Posts = [

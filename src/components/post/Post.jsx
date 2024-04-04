@@ -4,7 +4,7 @@ import "./Post.css";
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 // import { Users } from "../../dummyData";
-// import { format } from "timeago.js";
+import { format } from "timeago.js";
 // import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { Link } from "react-router-dom";
@@ -70,7 +70,7 @@ export default function Post({ post }) {
            <Link to={`profile/${user.username}`} style={{ textDecoration: "none", color: "black" }}>
               <img src={PUBLIC_FOLDER + user.profilePicture ||  PUBLIC_FOLDER + "person/noAvatar.png"} alt=""  className="postProfileImg" />
               <span className="postUsername" >{user.username}</span>
-              <span className="postDate" >{post.date}</span>
+              <span className="postDate" >{format(post.createdAt)}</span>
           </Link>
          </div>
         <div className="postTopRight">

@@ -91,47 +91,47 @@ export default function Rightbar({ user }) {
             <span className="rightbarInfoKey">出身:</span>
             <span className="rightbarInfoKey">{user.city}</span>
           </div>
-          <h4 className="rightbarTitle">あなたの友達</h4>
+          <h4 className="rightbarTitle">オンライン中の友達</h4>
           <div className="rightbarFollowings">
             <div className="rightbarFollowing">
               <img
-                src={PUBLIC_FOLDER + "/person/1.jpeg"}
+                src={PUBLIC_FOLDER + "/person/kubo.png"}
                 alt=""
                 className="rightbarFollowingImg"
               />
-              <span className="rightbarFollowingName">ShinCode</span>
+              <span className="rightbarFollowingName">久保建英</span>
             </div>
             <div className="rightbarFollowing">
               <img
-                src={PUBLIC_FOLDER + "/person/2.jpeg"}
+                src={PUBLIC_FOLDER + "/person/nagatomo.png"}
                 alt=""
                 className="rightbarFollowingImg"
               />
-              <span className="rightbarFollowingName">Yamaki</span>
+              <span className="rightbarFollowingName">長友佑都</span>
             </div>
             <div className="rightbarFollowing">
               <img
-                src={PUBLIC_FOLDER + "/person/3.jpeg"}
+                src={PUBLIC_FOLDER + "/person/tomiyasu.png"}
                 alt=""
                 className="rightbarFollowingImg"
               />
-              <span className="rightbarFollowingName">Koga</span>
+              <span className="rightbarFollowingName">冨安健洋</span>
             </div>
             <div className="rightbarFollowing">
               <img
-                src={PUBLIC_FOLDER + "/person/4.jpeg"}
+                src={PUBLIC_FOLDER + "/person/maeda.png"}
                 alt=""
                 className="rightbarFollowingImg"
               />
-              <span className="rightbarFollowingName">Matukubo</span>
+              <span className="rightbarFollowingName">前田大然</span>
             </div>
             <div className="rightbarFollowing">
               <img
-                src={PUBLIC_FOLDER + "/person/5.jpeg"}
+                src={PUBLIC_FOLDER + "/person/endou.png"}
                 alt=""
                 className="rightbarFollowingImg"
               />
-              <span className="rightbarFollowingName">Kikukawa</span>
+              <span className="rightbarFollowingName">遠藤航</span>
             </div>
           </div>
         </div>
