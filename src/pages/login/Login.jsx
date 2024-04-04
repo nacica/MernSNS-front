@@ -55,7 +55,7 @@ export default function Login() {
           </form>
           <button 
              className="loginRegisterButton"
-             onClick={() => window.location.href = "https://zero404-mernsns-front01.onrender.com//register"}>
+             onClick={() => window.location.href = "https://zero404-mernsns-front01.onrender.com/register"}>
              {/* onClick={() => window.location.href = "http://localhost:3000/register"}> */}
               アカウント作成
           </button>
