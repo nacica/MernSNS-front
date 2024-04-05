@@ -15,6 +15,7 @@ export default function Login() {
   const handleClick = (e) => {
     e.preventDefault();
     console.log(email.current.value);
+    console.log(password.current.value);
     loginCall(
       { email: email.current.value, password: password.current.value },
       dispatch
@@ -49,7 +50,7 @@ export default function Login() {
               placeholder="パスワード"
               ref={password}
             />
-            <button className="loginButton">ログイン</button>
+            <button className="loginButton"  onClick={(e) => handleClick(e)}>ログイン</button>
             <span className="loginForgot">パスワードを忘れた方へ</span>
 
           </form>

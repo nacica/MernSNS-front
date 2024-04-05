@@ -14,7 +14,7 @@ export default function Topbar() {
   const handlebtn = () => {
     localStorage.removeItem('user'); // ローカルストレージからuser情報を削除
     // window.location.href = 'http://localhost:3000'; 
-    window.location.href = 'https://zero404-mernsns-front01.onrender.com/'; 
+    window.location.href = 'https://mernsns-front-second.onrender.com/login'; 
   };
 
   return (
