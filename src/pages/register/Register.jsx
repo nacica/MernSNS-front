@@ -78,8 +78,8 @@ export default function Register() {
             <button className="loginButton" type="submit">
               サインアップ
             </button>
-            <button className="loginRegisterButton">ログインページへ</button>
           </form>
+          <button className="loginRegisterButton">ログインページへ</button>
         </div>
       </div>
     </div>
