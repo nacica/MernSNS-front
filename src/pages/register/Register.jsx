@@ -35,6 +35,9 @@ export default function Register() {
       }
     }
   };
+  const redirectToLoginPage = () => {
+    navigate("/login");
+  };
   return (
     <div className="login">
       <div className="loginWrapper">
@@ -79,7 +82,7 @@ export default function Register() {
               サインアップ
             </button>
           </form>
-          <button className="loginRegisterButton">ログインページへ</button>
+          <button className="loginRegisterButton" onClick={redirectToLoginPage}>ログインページへ</button>
         </div>
       </div>
     </div>
