@@ -20,11 +20,11 @@ export default function Rightbar({ user }) {
   const handleClick = async () => {
     try {
       if (followed) {
-        await axios.put(`https://mernsns-backend-0404-01.onrender.com/users/${user._id}/unfollow`, {
+        await axios.put(`https://mernsns-backend-0404-01.onrender.com/api/users/${user._id}/unfollow`, {
           userId: currentUser._id,
         });
       } else {
-        await axios.put(`https://mernsns-backend-0404-01.onrender.com/users/${user._id}/follow`);
+        await axios.put(`https://mernsns-backend-0404-01.onrender.com/api/users/${user._id}/follow`);
       }
     } catch (err) {
       console.log(err);
