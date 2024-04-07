@@ -13,11 +13,15 @@ export default function Feed({username}) {
   const [posts, setPosts] = useState([]);
   const { user } = useContext(AuthContext);
 
+
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = username       
-        ? await axios.get(`/posts/profile/${username}`) //プロフィールの場合
-        : await axios.get(`/posts/timeline/${user._id}`); //ホームの場合
+      const API_URL =  process.env.API_URL
+      const response = username      
+        ? await axios.get(`${ API_URL }/posts/profile/${username}`) //プロフィールの場合
+        : await axios.get(`${ API_URL }/posts/timeline/${user._id}`); //ホームの場合
+        // ? await axios.get(`/posts/profile/${username}`) //プロフィールの場合
+        // : await axios.get(`/posts/timeline/${user._id}`); //ホームの場合
 
       setPosts(
         response.data
