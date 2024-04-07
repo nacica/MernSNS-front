@@ -17,7 +17,7 @@ export default function Post({ post }) {
 
   useEffect(() => {
       const fetchUser = async () => {
-        const res = await axios.get(`/users/${post.userId}`);
+        const res = await axios.get(`https://mernsns-backend-0404-01.onrender.com/users/${post.userId}`);
              setUser(res.data);
       };
          fetchUser();
@@ -52,7 +52,7 @@ export default function Post({ post }) {
   const handleLike = async () => {
     try {
       //いいねのAPIを叩く
-      await axios.put(`/posts/${post._id}/like`, { userId: currentUser._id });
+      await axios.put(`https://mernsns-backend-0404-01.onrender.com/posts/${post._id}/like`, { userId: currentUser._id });
     } catch (err) {
       console.log(err);
     }

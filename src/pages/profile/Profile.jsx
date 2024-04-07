@@ -21,7 +21,7 @@ export default function Profile() {
       //クエリの取得ができてない。
       // const res = await axios.get("/users?username=shincode");
       // const res = await axios.get(`/users?username=shincode`);
-      const res = await axios.get(`/users?username=${username}`);
+      const res = await axios.get(`https://mernsns-backend-0404-01.onrender.com/users?username=${username}`);
 
       setUser(res.data);
       // console.log(res.data);

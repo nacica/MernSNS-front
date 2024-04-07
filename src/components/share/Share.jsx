@@ -35,13 +35,13 @@ import {
         newPost.img = fileName;
         console.log(newPost);
         try {
-          await axios.post("/upload", data);
+          await axios.post("https://mernsns-backend-0404-01.onrender.com/upload", data);
         } catch (err) {
           console.log(err);
         }
       }
       try {
-        await axios.post("/posts", newPost);
+        await axios.post("https://mernsns-backend-0404-01.onrender.com/posts", newPost);
         window.location.reload();
       } catch (err) {
         console.log(err);

@@ -28,7 +28,7 @@ export default function Register() {
           password: password.current.value,
         };
         //registerAPIを叩く
-        await axios.post("/auth/register", user);
+        await axios.post("https://mernsns-backend-0404-01.onrender.com/auth/register", user);
         navigate("/login");
       } catch (err) {
         console.log(err);
