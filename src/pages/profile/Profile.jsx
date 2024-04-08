@@ -24,7 +24,8 @@ export default function Profile() {
       const res = await axios.get(`/users?username=${username}`);
 
       setUser(res.data);
-      // console.log(res.data);
+      console.log("user=res.dataだから、取れてるか調べる！");
+      console.log(res.data);
     };
     fetchUser();
   }, [username]);
