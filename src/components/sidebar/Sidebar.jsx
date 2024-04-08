@@ -8,10 +8,29 @@ import {Bookmark, Home, MessageRounded, Notifications, Person, Search, Settings,
   import CloseFriend from "../closeFriend/Closefriend";
   import { AuthContext } from "../../context/AuthContext";
 
+
   
   export default function Sidebar() {
     // eslint-disable-next-line
     const { user } = useContext(AuthContext);
+
+    function getUserDataFromLocalStorage() {
+      const userDataJSON = localStorage.getItem('user'); // 'userData' キーで保存されているデータを取得
+      if (userDataJSON) {
+        return JSON.parse(userDataJSON); // JSON形式の文字列をJavaScriptオブジェクトにパースして返す
+      } else {
+        console.log("ユーザー情報を取得できません1"); // ユーザーデータがローカルストレージに保存されていない場合はエラーメッセージを表示
+        return null;
+      }
+    }
+    
+    // ローカルストレージからユーザーデータを取得
+    const userData = getUserDataFromLocalStorage();
+    
+    // 取得したユーザーデータをログに出力する
+    // console.log(userData);
+    // console.log(userData.username);
+
     
     return (
 
@@ -26,12 +45,15 @@ import {Bookmark, Home, MessageRounded, Notifications, Person, Search, Settings,
             </li>
             <li className="sidebarListItem">
               <Person className="sidebarIcon" />
-               <Link
-                to="/profile/遠藤航"
-                style={{ textDecoration: "none", color: "black" }}
-              >
+
+              {userData && userData.username && (
+                <Link
+                    to={`/profile/${userData.username}`}
+                    style={{ textDecoration: "none", color: "black" }}
+                >
                 <span className="sidebarListItemText">プロフィール</span>
-              </Link> 
+                </Link>
+              )}
             </li>
             <li className="sidebarListItem">
               <Search className="sidebarIcon" />
