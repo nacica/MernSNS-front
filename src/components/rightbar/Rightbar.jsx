@@ -1,4 +1,4 @@
-import { Add, Remove } from "@mui/icons-material";
+// import { Add, Remove } from "@mui/icons-material";
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
@@ -20,6 +20,8 @@ export default function Rightbar({ user }) {
   const handleClick = async () => {
     try {
       if (followed) {
+        // console.log("ユーザーがundefinedかどうか調べるよ");
+        // console.log(user);
         await axios.put(`https://mernsns-backend-0404-01.onrender.com/api/users/${user._id}/unfollow`, {
           userId: currentUser._id,
         });
