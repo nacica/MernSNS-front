@@ -17,7 +17,7 @@ export default function Post({ post }) {
 
   useEffect(() => {
       const fetchUser = async () => {
-        const res = await axios.get(`https://mernsns-backend-0404-01.onrender.com/api/users/${post.userId}`);
+        const res = await axios.get(`/users/${post.userId}`);
              setUser(res.data);
       };
          fetchUser();
@@ -52,7 +52,7 @@ export default function Post({ post }) {
   const handleLike = async () => {
     try {
       //いいねのAPIを叩く
-      await axios.put(`https://mernsns-backend-0404-01.onrender.com/api/posts/${post._id}/like`, { userId: currentUser._id });
+      await axios.put(`/posts/${post._id}/like`, { userId: currentUser._id });
     } catch (err) {
       console.log(err);
     }
@@ -70,6 +70,7 @@ export default function Post({ post }) {
            <Link to={`profile/${user.username}`} style={{ textDecoration: "none", color: "black" }}>
               <img src={PUBLIC_FOLDER + user.profilePicture ||  PUBLIC_FOLDER + "person/noAvatar.png"} alt=""  className="postProfileImg" />
               <span className="postUsername" >{user.username}</span>
+              <span className="postDate" >{post.createdAt}</span>
               {/* <span className="postDate" >{format(post.createdAt)}</span> */}
           </Link>
          </div>

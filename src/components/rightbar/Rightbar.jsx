@@ -81,7 +81,7 @@ export default function Rightbar({ user }) {
             onClick={() => handleClick()}
            > 
              {followed ? "フォローを外す" : "フォロー"}
-             {followed ? <Remove /> : <Add />}
+             {/* {followed ? <Remove /> : <Add />} */}
              {/* フォロー <Add /> */}
            </button> 
         )} 
