@@ -20,7 +20,7 @@ export default function Profile() {
       // const res = await axios.get(`users/${post.userId}`);
       //クエリの取得ができてない。
       // const res = await axios.get("/users?username=shincode");
-      const res = await axios.get(`/users?username=長友佑都`);
+      const res = await axios.get(`/users?username=遠藤航`);
       // const res = await axios.get(`/users?username=${username}`);
 
       setUser(res.data);
