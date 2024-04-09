@@ -22,7 +22,7 @@ export default function Profile() {
       // const res = await axios.get(`/users?username=遠藤航`);
       // const res = await axios.get(`/users?username=${username}`);
       // const res = await axios.get(`/users?username`);
-      const res = await axios.get(`https://mernsns-backend-0404-01.onrender.com/api/users?username=${username}`);
+      const res = await axios.get(`https://mernsns-backend-0404-01.onrender.com/api/${username}`);
 
       setUser(res.data);
       console.log("user=res.dataだから、取れてるか調べる！");
