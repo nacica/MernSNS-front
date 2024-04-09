@@ -17,6 +17,9 @@ export default function Post({ post }) {
       const fetchUser = async () => {
         const res = await axios.get(`/users/${post.userId}`);
              setUser(res.data);
+             console.log("投稿画像アイコン直前のres.data");
+             console.log(res.data);
+             console.log("投稿画像アイコン直前のres.data");
       };
          fetchUser();
    }, [post.userId]);
