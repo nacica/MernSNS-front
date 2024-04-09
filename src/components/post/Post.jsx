@@ -1,11 +1,9 @@
 import { MoreVert } from "@mui/icons-material";
-// import React from "react";
 import "./Post.css";
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 // import { Users } from "../../dummyData";
 // import { format } from "timeago.js";
-// import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { Link } from "react-router-dom";
 
@@ -60,7 +58,9 @@ export default function Post({ post }) {
     setIsLiked(!isLiked);
   };
 
-
+  console.log(投稿画像アイコン直前のuser);
+  console.log(user);
+  console.log(投稿画像アイコン直前のuser);
 
   return (
     <div className="post">

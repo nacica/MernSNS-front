@@ -19,9 +19,6 @@ export default function Profile() {
 
   useEffect(() => {
     const fetchUser = async () => {
-      // const res = await axios.get(`/users?username=遠藤航`);
-      // const res = await axios.get(`/users?username=${username}`);
-      // const res = await axios.get(`/users?username`);
       const res = await axios.get(`https://mernsns-backend-0404-01.onrender.com/api/users/${username}`);
 
       setUser(res.data);
