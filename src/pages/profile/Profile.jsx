@@ -13,14 +13,16 @@ export default function Profile() {
   //クエリでusernameを取得してくる。Post.jsから持ってきた。
   const [user, setUser] = useState({});
   const username = useParams().username;
-  // console.log(params);
+  console.log("プロフィール画像用のuserが取れてるか確認");
+  console.log(user);
+  console.log("プロフィール画像用のuserが取れてるか確認");
 
   useEffect(() => {
     const fetchUser = async () => {
       // const res = await axios.get(`users/${post.userId}`);
-      //クエリの取得ができてない。
       // const res = await axios.get("/users?username=shincode");
-      const res = await axios.get(`/users?username=遠藤航`);
+      // const res = await axios.get(`/users?username=遠藤航`);
+      const res = await axios.get("/users?username=遠藤航");
       // const res = await axios.get(`/users?username=${username}`);
 
       setUser(res.data);

@@ -18,12 +18,13 @@ export default function Rightbar({ user }) {
   }, [currentUser, user?.id]);
 
   const handleClick = async () => {
+    console.log("useContextからuser._idが取れてきてるか");
+    console.log(user);
+    console.log(user.username);
+    console.log("↑useContextからuser._idが取れてきてるか");
     try {
       if (followed) {
-        console.log("useContextからuser._idが取れてきてるか");
-        console.log(user);
-        console.log(user.username);
-        console.log("↑useContextからuser._idが取れてきてるか");
+
         await axios.put(`https://mernsns-backend-0404-01.onrender.com/api/users/${user._id}/unfollow`, {
           userId: currentUser._id,
         });

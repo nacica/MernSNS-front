@@ -17,24 +17,15 @@ const initialState = {
   //   likes: [],
   //   isAdmin: false,
   // },
-  // user: {
-  //   _id: "65b89a4e11ec94fc24c0d694",
-  //   username: "南野拓実",
-  //   email: "yokohama0232009@yahoo.co.jp",
-  //   password: "0232009",
-  //   profilePicture: "/person/minamino.png",
-  //   coverPicture: "",
-  //   followers: [],
-  //   followings: [],
-  //   likes: [],
-  //   isAdmin: false,
-  // },
-  // user: JSON.parse(localStorage.getItem("user")) || null,
   isFetching: false, //ログインしようともしてないですね。
   error: false, //エラーも吐いてないですね。
 };
 
 export const AuthContext = createContext(initialState);
+
+console.log("initialStateの値を調べる");
+console.log(initialState);
+console.log("initialStateの値を調べる");
 
 export const AuthContextProvider = ({ children }) => {
   //ユーザー入力によって状態(state)が更新され、それをグローバルに利用している。
