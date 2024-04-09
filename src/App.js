@@ -23,7 +23,7 @@ function App() {
           path="/register"
           element={user ? <Navigate to="/" /> : <Register />}
         />
-        <Route path="/profile/:username" element={<Profile />} />
+        <Route path="https://mernsns-front-second.onrender.com/profile/:username" element={<Profile />} />
       </Routes>
     </Router>
   );

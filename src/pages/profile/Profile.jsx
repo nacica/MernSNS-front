@@ -14,16 +14,14 @@ export default function Profile() {
   const [user, setUser] = useState({});
   const username = useParams().username;
   console.log("プロフィール画像用のuserが取れてるか確認");
-  console.log(user);
+  console.log(username);
   console.log("プロフィール画像用のuserが取れてるか確認");
 
   useEffect(() => {
     const fetchUser = async () => {
-      // const res = await axios.get(`users/${post.userId}`);
-      // const res = await axios.get("/users?username=shincode");
       // const res = await axios.get(`/users?username=遠藤航`);
-      const res = await axios.get("/users?username=遠藤航");
       // const res = await axios.get(`/users?username=${username}`);
+      const res = await axios.get(`/users?username`);
 
       setUser(res.data);
       console.log("user=res.dataだから、取れてるか調べる！");
