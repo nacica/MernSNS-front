@@ -58,9 +58,9 @@ export default function Post({ post }) {
     setIsLiked(!isLiked);
   };
 
-  console.log(投稿画像アイコン直前のuser);
+  console.log("投稿画像アイコン直前のuser");
   console.log(user);
-  console.log(投稿画像アイコン直前のuser);
+  console.log("投稿画像アイコン直前のuser");
 
   return (
     <div className="post">
