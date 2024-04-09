@@ -21,10 +21,12 @@ export default function Profile() {
     const fetchUser = async () => {
       // const res = await axios.get(`/users?username=遠藤航`);
       // const res = await axios.get(`/users?username=${username}`);
-      const res = await axios.get(`/users?username`);
+      // const res = await axios.get(`/users?username`);
+      const res = await axios.get(`/username`);
 
       setUser(res.data);
       console.log("user=res.dataだから、取れてるか調べる！");
+      console.log(res);
       console.log(res.data);
     };
     fetchUser();
