@@ -11,6 +11,7 @@ export default function Post({ post }) {
   const [like, setLike] = useState(post.likes.length);
 
   const [user, setUser] = useState({});
+
   const { user: currentUser } = useContext(AuthContext);
   console.log("Post.jsxでcurrentuserがとれてるか");
   console.log(currentUser); //OK
@@ -79,15 +80,32 @@ export default function Post({ post }) {
       <div className="postWrapper">
         <div className="postTop">
           <div className="postTopLeft">
-           <Link to={`profile/${currentUser.username}`} //ホームの時にここがundefinedになる
+          { username ?(
+           <Link to={`profile/${user.username}`} //
                  style={{ textDecoration: "none", color: "black" }}>
 
-              <img src={PUBLIC_FOLDER + currentUser.profilePicture ||  PUBLIC_FOLDER + "person/noAvatar.png"} alt=""  className="postProfileImg" />
+              <img src={PUBLIC_FOLDER + user.profilePicture ||  PUBLIC_FOLDER + "person/noAvatar.png"} alt=""  className="postProfileImg" />
             
-              <span className="postUsername" >{currentUser.username}</span>
+              <span className="postUsername" >{user.username}</span>
               <span className="postDate" >{post.createdAt}</span>
               {/* <span className="postDate" >{format(post.createdAt)}</span> */}
           </Link>
+
+          ):(
+            <Link to={`profile/${currentUser.username}`} 
+                  style={{ textDecoration: "none", color: "black" }}>
+
+                <img src={PUBLIC_FOLDER + currentUser.profilePicture ||  PUBLIC_FOLDER + "person/noAvatar.png"} alt=""  className="postProfileImg" />
+       
+                <span className="postUsername" >{currentUser.username}</span>
+                <span className="postDate" >{post.createdAt}</span>
+                 {/* <span className="postDate" >{format(post.createdAt)}</span> */}
+            </Link>
+            )
+          }
+
+
+
          </div>
         <div className="postTopRight">
              <MoreVert />
