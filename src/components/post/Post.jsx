@@ -71,11 +71,9 @@ export default function Post({ post }) {
     setIsLiked(!isLiked);
   };
 
-  console.log("currentUser.usernameとusernameを比較");
-  console.log(currentUser.username);
-    console.log(user);
-    console.log(username);
-    console.log("currentUser.usernameとusernameを比較");
+    console.log("postの中身を調べる");
+    console.log(post);
+    console.log("postの中身を調べる");
   
 
 
