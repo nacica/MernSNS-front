@@ -70,7 +70,9 @@ export default function Post({ post }) {
         <div className="postTop">
           <div className="postTopLeft">
            <Link to={`profile/${user.username}`} style={{ textDecoration: "none", color: "black" }}>
-              <img src={PUBLIC_FOLDER + user.profilePicture ||  PUBLIC_FOLDER + "person/noAvatar.png"} alt=""  className="postProfileImg" />
+
+              <img src={PUBLIC_FOLDER + profilePicture ||  PUBLIC_FOLDER + "person/noAvatar.png"} alt=""  className="postProfileImg" />
+            
               <span className="postUsername" >{user.username}</span>
               <span className="postDate" >{post.createdAt}</span>
               {/* <span className="postDate" >{format(post.createdAt)}</span> */}
