@@ -26,6 +26,7 @@ import {
       const newPost = {
         userId: user._id,
         desc: desc.current.value,
+        username:user.username
       };
       if (file) {
         const data = new FormData();

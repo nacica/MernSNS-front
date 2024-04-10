@@ -18,7 +18,7 @@ export default function Post({ post }) {
   // console.log("Post.jsxでusernameがとれてるか");
 
 
-  const    username   =   useParams().username
+  const username   =   useParams().username
   // console.log("Post.jsxでusernameがとれてるか");
   // console.log(username); //OK
   // console.log("Post.jsxでusernameがとれてるか");
@@ -47,17 +47,6 @@ export default function Post({ post }) {
   // const [like, setLike] = useState(post.likes.length);
   const [isLiked, setIsLiked] = useState(false);
 
-
-  // useEffect(() => {
-  //   const fetchUser = async () => {
-  //     // const res = await axios.get(`/users/${post.userId}`);
-  //     // const res = await axios.get(`/users/${post.userId}`);
-  //     const res = await axios.get(`/users?userId=${post.userId}`);
-  //     setUser(res.data);
-  //     // console.log(res.data);
-  //   };
-  //   fetchUser();
-  // }, [post.userId]);
 
 
   const handleLike = async () => {
@@ -94,7 +83,7 @@ export default function Post({ post }) {
           </Link>
 
           ):(
-            currentUser._id === post.userId ? (//userはオブジェクト
+            currentUser._id === post.userId ? (
             <Link to={`profile/${currentUser.username}`} 
             style={{ textDecoration: "none", color: "black" }}>
 
