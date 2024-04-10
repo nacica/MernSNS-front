@@ -73,7 +73,8 @@ export default function Post({ post }) {
 
   console.log("currentUser.usernameとusernameを比較");
   console.log(currentUser.username);
-    console.log(user.username);
+    console.log(user);
+    console.log(username);
     console.log("currentUser.usernameとusernameを比較");
   
 
