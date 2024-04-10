@@ -33,7 +33,6 @@ export default function Post({ post }) {
   // const [like, setLike] = useState(post.likes?.length?? 0);
   // const [like, setLike] = useState(post.likes.length);
   const [isLiked, setIsLiked] = useState(false);
-  // const [user, setUser] = useState({});
 
   const { user: currentUser } = useContext(AuthContext);
 

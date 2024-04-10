@@ -23,8 +23,8 @@ export default function Profile() {
 
       setUser(res.data);
       console.log("user=res.dataだから、取れてるか調べる！");
-      console.log(res);
-      console.log(res.data);
+      console.log(res);//　←　取れてる！
+      console.log(res.data); //OK
     };
     fetchUser();
   }, [username]);
@@ -59,7 +59,7 @@ export default function Profile() {
           </div>
           <div className="profileRightBottom">
             {/* <Feed username="shincode" /> */}
-            <Feed username={username} />
+            <Feed username={username} profilePicture={profilePicture}/>
             <Rightbar user={user} />
           </div>
         </div>
