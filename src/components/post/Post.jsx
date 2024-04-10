@@ -12,17 +12,17 @@ export default function Post({ post }) {
   const [user, setUser] = useState({});
 
   const    username   =   useParams().username
-  console.log("Post.jsxでusernameがとれてるか");
-  console.log(username); 
-  console.log("Post.jsxでusernameがとれてるか");
+  // console.log("Post.jsxでusernameがとれてるか");
+  // console.log(username); //OK
+  // console.log("Post.jsxでusernameがとれてるか");
 
 
   useEffect(() => {
       const fetchUser = async () => {
-        const res = await axios.get(`/users/${username}`);//ここがエラーになってるのが原因
+        const res = await axios.get(`https://mernsns-backend-0404-01.onrender.com/api/users/${username}`);//ここがエラーになってるのが原因
              setUser(res.data);
              console.log("投稿画像アイコン直前のres.data");
-             console.log(res); //エラー
+             console.log(res.data); //エラー
              console.log("投稿画像アイコン直前のres.data");
       };
          fetchUser();
