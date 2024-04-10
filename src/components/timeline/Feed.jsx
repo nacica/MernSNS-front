@@ -43,7 +43,9 @@ export default function Feed({username}) {
       <div className="feedWrapper">
         <Share />
          {posts.map((post) => (
-          <Post key={post._id} post={post} profilePicture={profilePicture} /> 
+          (profilePicture !== null && profilePicture !== undefined) && (
+            <Post key={post._id} post={post} profilePicture={profilePicture} />
+          ) 
          ))} 
       </div>
     </div>
