@@ -2,7 +2,6 @@ import { MoreVert } from "@mui/icons-material";
 import "./Post.css";
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
-// import { Users } from "../../dummyData";
 // import { format } from "timeago.js";
 import { AuthContext } from "../../context/AuthContext";
 import { Link } from "react-router-dom";

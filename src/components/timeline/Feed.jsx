@@ -4,7 +4,7 @@ import Share from "../share/Share";
 import "./Feed.css";
 import Post from "../post/Post";
 
-// import { Posts } from "../../dummyData";
+
 import axios from "axios";
 import { AuthContext } from "../../context/AuthContext";
 
@@ -38,7 +38,7 @@ export default function Feed({username}) {
       <div className="feedWrapper">
         <Share />
          {posts.map((post) => (
-          <Post key={post._id} post={post} /> 
+          <Post key={post._id} post={post} profilePicture={profilePicture} /> 
          ))} 
       </div>
     </div>
