@@ -1,6 +1,6 @@
 // import { Add, Remove } from "@mui/icons-material";
 import axios from "axios";
-axios.defaults.withCredentials = true;
+// axios.defaults.withCredentials = true;
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { Users } from "../../dummyData";
