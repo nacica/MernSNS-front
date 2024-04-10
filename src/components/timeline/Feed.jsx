@@ -13,6 +13,7 @@ export default function Feed({username}) {
   const [posts, setPosts] = useState([]);
   const { user } = useContext(AuthContext);
 
+  const profilePicture = user.profilePicture;
 
   useEffect(() => {
     const fetchPosts = async () => {
