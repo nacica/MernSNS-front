@@ -63,9 +63,9 @@ export default function Post({ post }) {
   console.log(user);
   console.log("投稿画像アイコン直前のuser");
 
-  console.log("profilePicture確認");
-  console.log(profilePicture);
-  console.log("profilePicture確認");
+  // console.log("profilePicture確認");
+  // console.log(profilePicture);
+  // console.log("profilePicture確認");
 
   return (
     <div className="post">
