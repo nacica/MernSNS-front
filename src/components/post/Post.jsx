@@ -13,9 +13,9 @@ export default function Post({ post }) {
   const [user, setUser] = useState({});
 
   const { user: currentUser } = useContext(AuthContext);
-  console.log("Post.jsxでcurrentuserがとれてるか");
-  console.log(currentUser); //OK
-  console.log("Post.jsxでusernameがとれてるか");
+  // console.log("Post.jsxでcurrentuserがとれてるか");
+  // console.log(currentUser); //OK
+  // console.log("Post.jsxでusernameがとれてるか");
 
 
   const    username   =   useParams().username
@@ -27,11 +27,11 @@ export default function Post({ post }) {
   useEffect(() => {
       const fetchUser = async () => {
         if (username) {
-        const res = await axios.get(`https://mernsns-backend-0404-01.onrender.com/api/users/${username}`);//ここがエラーになってるのが原因
+        const res = await axios.get(`https://mernsns-backend-0404-01.onrender.com/api/users/${username}`);
              setUser(res.data);
-             console.log("投稿画像アイコン直前のres.data");
-             console.log(res.data); //エラー
-             console.log("投稿画像アイコン直前のres.data");
+            //  console.log("投稿画像アイコン直前のres.data");
+            //  console.log(res.data); //OK オブジェクトで返ってくる
+            //  console.log("投稿画像アイコン直前のres.data");
         }
       };
          fetchUser();
@@ -71,9 +71,9 @@ export default function Post({ post }) {
     setIsLiked(!isLiked);
   };
 
-  console.log("投稿画像アイコン直前のuser");
-  console.log(user);
-  console.log("投稿画像アイコン直前のuser");
+  // console.log("投稿画像アイコン直前のuser");
+  // console.log(user);
+  // console.log("投稿画像アイコン直前のuser");
 
   return (
     <div className="post">
@@ -92,8 +92,9 @@ export default function Post({ post }) {
           </Link>
 
           ):(
+            currentUser === user ? (//userはオブジェクト
             <Link to={`profile/${currentUser.username}`} 
-                  style={{ textDecoration: "none", color: "black" }}>
+            style={{ textDecoration: "none", color: "black" }}>
 
                 <img src={PUBLIC_FOLDER + currentUser.profilePicture ||  PUBLIC_FOLDER + "person/noAvatar.png"} alt=""  className="postProfileImg" />
        
@@ -101,8 +102,20 @@ export default function Post({ post }) {
                 <span className="postDate" >{post.createdAt}</span>
                  {/* <span className="postDate" >{format(post.createdAt)}</span> */}
             </Link>
-            )
-          }
+            ):(
+              <Link to={`profile/${user.username}`} //
+                 style={{ textDecoration: "none", color: "black" }}>
+
+                  <img src={PUBLIC_FOLDER + user.profilePicture ||  PUBLIC_FOLDER + "person/noAvatar.png"} alt=""  className="postProfileImg" />
+            
+                  <span className="postUsername" >{user.username}</span>
+                  <span className="postDate" >{post.createdAt}</span>
+                  {/* <span className="postDate" >{format(post.createdAt)}</span> */}
+              </Link>
+               ))
+              } 
+            
+          
 
 
 
