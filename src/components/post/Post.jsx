@@ -92,7 +92,7 @@ export default function Post({ post }) {
           </Link>
 
           ):(
-            currentUser === user ? (//userはオブジェクト
+            currentUser.username === user.username ? (//userはオブジェクト
             <Link to={`profile/${currentUser.username}`} 
             style={{ textDecoration: "none", color: "black" }}>
 
