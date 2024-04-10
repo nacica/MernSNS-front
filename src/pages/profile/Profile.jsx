@@ -13,8 +13,9 @@ export default function Profile() {
   //クエリでusernameを取得してくる。Post.jsから持ってきた。
   const [user, setUser] = useState({});
   const username = useParams().username;
+
   console.log("プロフィール画像用のuserが取れてるか確認");
-  console.log(username);
+  console.log(username);//OK
   console.log("プロフィール画像用のuserが取れてるか確認");
 
   useEffect(() => {
@@ -45,7 +46,7 @@ export default function Profile() {
               <img
                 src={
                   user.profilePicture
-                  ? PUBLIC_FOLDER + user.profilePicture
+                  ? PUBLIC_FOLDER + res.profilePicture
                   : PUBLIC_FOLDER + "person/noAvatar.png"
                 }
                 alt=""
