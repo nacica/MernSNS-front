@@ -4,7 +4,7 @@ import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 // import { format } from "timeago.js";
 import { AuthContext } from "../../context/AuthContext";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function Post({ post }) {
   const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER;
@@ -12,7 +12,6 @@ export default function Post({ post }) {
   const [user, setUser] = useState({});
 
   const    username   =   useParams().username
-
   useEffect(() => {
       const fetchUser = async () => {
         const res = await axios.get(`/users/${username}`);//ここがエラーになってるのが原因
