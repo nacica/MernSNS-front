@@ -19,11 +19,13 @@ export default function Post({ post }) {
 
   useEffect(() => {
       const fetchUser = async () => {
+        if (username) {
         const res = await axios.get(`https://mernsns-backend-0404-01.onrender.com/api/users/${username}`);//ここがエラーになってるのが原因
              setUser(res.data);
              console.log("投稿画像アイコン直前のres.data");
              console.log(res.data); //エラー
              console.log("投稿画像アイコン直前のres.data");
+        }
       };
          fetchUser();
    }, [post.userId]);
