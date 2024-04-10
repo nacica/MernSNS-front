@@ -23,10 +23,10 @@ export default function Feed({username}) {
     const fetchPosts = async () => {
       // const API_URL =  process.env.API_URL
       const response = username      
-        // ? await axios.get(`https://mernsns-backend-0404-01.onrender.com/api/posts/profile/${username}`) //プロフィールの場合
-        // : await axios.get(`https://mernsns-backend-0404-01.onrender.com/api/posts/timeline/${user._id}`); //ホームの場合
-        ? await axios.get(`/api/posts/profile/${username}`) //プロフィールの場合
-        : await axios.get(`/api/posts/timeline/${user._id}`); //ホームの場合
+        ? await axios.get(`https://mernsns-backend-0404-01.onrender.com/api/posts/profile/${username}`) //プロフィールの場合
+        : await axios.get(`https://mernsns-backend-0404-01.onrender.com/api/posts/timeline/${user._id}`); //ホームの場合
+        // ? await axios.get(`/api/posts/profile/${username}`) //プロフィールの場合
+        // : await axios.get(`/api/posts/timeline/${user._id}`); //ホームの場合
 
       setPosts(
         response.data
