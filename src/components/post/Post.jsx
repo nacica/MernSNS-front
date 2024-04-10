@@ -71,9 +71,12 @@ export default function Post({ post }) {
     setIsLiked(!isLiked);
   };
 
-  // console.log("投稿画像アイコン直前のuser");
-  // console.log(user);
-  // console.log("投稿画像アイコン直前のuser");
+  console.log("currentUser.usernameとusernameを比較");
+  console.log(currentUser.username);
+    console.log(user.username);
+    console.log("currentUser.usernameとusernameを比較");
+  
+
 
   return (
     <div className="post">
