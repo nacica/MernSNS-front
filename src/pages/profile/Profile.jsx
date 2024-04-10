@@ -17,6 +17,8 @@ export default function Profile() {
   console.log(username);
   console.log("プロフィール画像用のuserが取れてるか確認");
 
+  const profilePicture = user.profilePicture;
+
   useEffect(() => {
     const fetchUser = async () => {
       const res = await axios.get(`https://mernsns-backend-0404-01.onrender.com/api/users/${username}`);
