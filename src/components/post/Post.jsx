@@ -9,7 +9,13 @@ import { Link, useParams } from "react-router-dom";
 export default function Post({ post }) {
   const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER;
   const [like, setLike] = useState(post.likes.length);
+
   const [user, setUser] = useState({});
+  const { user: currentUser } = useContext(AuthContext);
+  console.log("Post.jsxでcurrentuserがとれてるか");
+  console.log(currentUser); //OK
+  console.log("Post.jsxでusernameがとれてるか");
+
 
   const    username   =   useParams().username
   // console.log("Post.jsxでusernameがとれてるか");
@@ -40,7 +46,6 @@ export default function Post({ post }) {
   // const [like, setLike] = useState(post.likes.length);
   const [isLiked, setIsLiked] = useState(false);
 
-  const { user: currentUser } = useContext(AuthContext);
 
   // useEffect(() => {
   //   const fetchUser = async () => {
@@ -74,11 +79,12 @@ export default function Post({ post }) {
       <div className="postWrapper">
         <div className="postTop">
           <div className="postTopLeft">
-           <Link to={`profile/${user.username}`} style={{ textDecoration: "none", color: "black" }}>
+           <Link to={`profile/${currentUser.username}`} //ホームの時にここがundefinedになる
+                 style={{ textDecoration: "none", color: "black" }}>
 
-              <img src={PUBLIC_FOLDER + user.profilePicture ||  PUBLIC_FOLDER + "person/noAvatar.png"} alt=""  className="postProfileImg" />
+              <img src={PUBLIC_FOLDER + currentUser.profilePicture ||  PUBLIC_FOLDER + "person/noAvatar.png"} alt=""  className="postProfileImg" />
             
-              <span className="postUsername" >{user.username}</span>
+              <span className="postUsername" >{currentUser.username}</span>
               <span className="postDate" >{post.createdAt}</span>
               {/* <span className="postDate" >{format(post.createdAt)}</span> */}
           </Link>
