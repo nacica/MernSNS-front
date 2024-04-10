@@ -71,44 +71,16 @@ export default function Post({ post }) {
       <div className="postWrapper">
         <div className="postTop">
           <div className="postTopLeft">
-          { username ?(
-           <Link to={`profile/${user.username}`} //
+          
+           <Link to={`profile/${post.username}`} //
                  style={{ textDecoration: "none", color: "black" }}>
 
-              <img src={PUBLIC_FOLDER + user.profilePicture ||  PUBLIC_FOLDER + "person/noAvatar.png"} alt=""  className="postProfileImg" />
+              <img src={PUBLIC_FOLDER + post.profileIcon ||  PUBLIC_FOLDER + "person/noAvatar.png"} alt=""  className="postProfileImg" />
             
-              <span className="postUsername" >{user.username}</span>
+              <span className="postUsername" >{post.username}</span>
               <span className="postDate" >{post.createdAt}</span>
               {/* <span className="postDate" >{format(post.createdAt)}</span> */}
           </Link>
-
-          ):(
-            currentUser._id === post.userId ? (
-            <Link to={`profile/${currentUser.username}`} 
-            style={{ textDecoration: "none", color: "black" }}>
-
-                <img src={PUBLIC_FOLDER + currentUser.profilePicture ||  PUBLIC_FOLDER + "person/noAvatar.png"} alt=""  className="postProfileImg" />
-       
-                <span className="postUsername" >{currentUser.username}</span>
-                <span className="postDate" >{post.createdAt}</span>
-                 {/* <span className="postDate" >{format(post.createdAt)}</span> */}
-            </Link>
-            ):(
-              <Link to={`profile/${user.username}`} //
-                 style={{ textDecoration: "none", color: "black" }}>
-
-                  <img src={PUBLIC_FOLDER + user.profilePicture ||  PUBLIC_FOLDER + "person/noAvatar.png"} alt=""  className="postProfileImg" />
-            
-                  <span className="postUsername" >{user.username}</span>
-                  <span className="postDate" >{post.createdAt}</span>
-                  {/* <span className="postDate" >{format(post.createdAt)}</span> */}
-              </Link>
-               ))
-              } 
-            
-          
-
-
 
          </div>
         <div className="postTopRight">
