@@ -13,9 +13,9 @@ export default function Feed({username}) {
   const [posts, setPosts] = useState([]);
   const { user } = useContext(AuthContext);
 
-  const profilePicture = user.profilePicture;
-  console.log("FeedのprofilePictureが取れてるか確認");//　←　取れてる！
-  console.log( profilePicture);//　←　取れてる！けど、ずっとendou.pngなぜならログインユーザーの情報だから
+
+  console.log("Feedのプロップスのusernameが取れてるか確認");//　←　取れてる！
+  console.log( username);//　←　取れてる！けど、ずっとendou.pngなぜならログインユーザーの情報だから
   console.log("FeedのprofilePictureが取れてるか確認");//　←　取れてる！
 
 
@@ -43,7 +43,7 @@ export default function Feed({username}) {
       <div className="feedWrapper">
         <Share />
          {posts.map((post) => (
-            <Post key={post._id} post={post} />
+            <Post key={post._id} post={post} username={username} />
           ))} 
       </div>
     </div>
