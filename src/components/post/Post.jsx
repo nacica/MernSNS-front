@@ -11,13 +11,14 @@ export default function Post({ post }) {
   const [like, setLike] = useState(post.likes.length);
   const [user, setUser] = useState({});
 
+  const    username   =   useParams().username
 
   useEffect(() => {
       const fetchUser = async () => {
-        const res = await axios.get(`/users/${post.userId}`);
+        const res = await axios.get(`/users/${username}`);//ここがエラーになってるのが原因
              setUser(res.data);
              console.log("投稿画像アイコン直前のres.data");
-             console.log(res.data);
+             console.log(res.data); //エラー
              console.log("投稿画像アイコン直前のres.data");
       };
          fetchUser();
@@ -47,7 +48,6 @@ export default function Post({ post }) {
   // }, [post.userId]);
 
 
-
   const handleLike = async () => {
     try {
       //いいねのAPIを叩く
@@ -63,10 +63,6 @@ export default function Post({ post }) {
   console.log(user);
   console.log("投稿画像アイコン直前のuser");
 
-  // console.log("profilePicture確認");
-  // console.log(profilePicture);
-  // console.log("profilePicture確認");
-
   return (
     <div className="post">
       <div className="postWrapper">
@@ -74,7 +70,7 @@ export default function Post({ post }) {
           <div className="postTopLeft">
            <Link to={`profile/${user.username}`} style={{ textDecoration: "none", color: "black" }}>
 
-              {/* <img src={PUBLIC_FOLDER + profilePicture ||  PUBLIC_FOLDER + "person/noAvatar.png"} alt=""  className="postProfileImg" /> */}
+              <img src={PUBLIC_FOLDER + profilePicture ||  PUBLIC_FOLDER + "person/noAvatar.png"} alt=""  className="postProfileImg" />
             
               <span className="postUsername" >{user.username}</span>
               <span className="postDate" >{post.createdAt}</span>
