@@ -17,7 +17,7 @@ export default function Profile() {
   console.log(username);
   console.log("プロフィール画像用のuserが取れてるか確認");
 
-  const profilePicture = user.profilePicture;
+  // const profilePicture = user.profilePicture;
 
   useEffect(() => {
     const fetchUser = async () => {

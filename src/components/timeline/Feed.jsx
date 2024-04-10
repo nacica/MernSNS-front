@@ -14,6 +14,10 @@ export default function Feed({username}) {
   const { user } = useContext(AuthContext);
 
   const profilePicture = user.profilePicture;
+  console.log("FeedのprofilePictureが取れてるか確認");//　←　取れてる！
+  console.log( profilePicture);//　←　取れてる！
+  console.log("FeedのprofilePictureが取れてるか確認");//　←　取れてる！
+
 
   useEffect(() => {
     const fetchPosts = async () => {
