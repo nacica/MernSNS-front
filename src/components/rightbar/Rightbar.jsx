@@ -24,7 +24,6 @@ export default function Rightbar({ user }) {
     console.log("↑useContextからuser._idが取れてきてるか");
     try {
       if (followed) {
-
         await axios.put(`https://mernsns-backend-0404-01.onrender.com/api/users/${user._id}/unfollow`, {
           userId: currentUser._id,
         });
@@ -71,7 +70,7 @@ export default function Rightbar({ user }) {
           src="assets/promotion/promotion3.jpeg"
           alt=""
         />
-        <p className="promotionName">ShinCode株式会社</p>
+        <p className="promotionName">nacica株式会社</p>
       </>
     );
   };
