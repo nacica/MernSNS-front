@@ -10,14 +10,13 @@ import { format } from 'date-fns';
 export default function Post({ post }) {
   const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER;
   const [like, setLike] = useState(post.likes.length);
-
+// eslint-disable-next-line
   const [user, setUser] = useState({});
 
   const { user: currentUser } = useContext(AuthContext);
   // console.log("Post.jsxでcurrentuserがとれてるか");
   // console.log(currentUser); //OK
   // console.log("Post.jsxでusernameがとれてるか");
-
 
   const username   =   useParams().username
   // console.log("Post.jsxでusernameがとれてるか");
@@ -36,6 +35,7 @@ export default function Post({ post }) {
         }
       };
          fetchUser();
+         // eslint-disable-next-line
    }, [post.userId]);
 
 
