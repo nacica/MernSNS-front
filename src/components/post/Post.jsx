@@ -5,18 +5,18 @@ import React, { useContext, useEffect, useState } from "react";
 // import { format } from "timeago.js";
 import { AuthContext } from "../../context/AuthContext";
 import { Link, useParams } from "react-router-dom";
+import { format } from 'date-fns';
 
 export default function Post({ post }) {
   const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER;
   const [like, setLike] = useState(post.likes.length);
-
+// eslint-disable-next-line
   const [user, setUser] = useState({});
 
   const { user: currentUser } = useContext(AuthContext);
   // console.log("Post.jsxでcurrentuserがとれてるか");
   // console.log(currentUser); //OK
   // console.log("Post.jsxでusernameがとれてるか");
-
 
   const username   =   useParams().username
   // console.log("Post.jsxでusernameがとれてるか");
@@ -35,6 +35,7 @@ export default function Post({ post }) {
         }
       };
          fetchUser();
+         // eslint-disable-next-line
    }, [post.userId]);
 
 
@@ -78,7 +79,7 @@ export default function Post({ post }) {
               <img src={PUBLIC_FOLDER + post.profileIcon ||  PUBLIC_FOLDER + "person/noAvatar.png"} alt=""  className="postProfileImg" />
             
               <span className="postUsername" >{post.username}</span>
-              <span className="postDate" >{post.createdAt}</span>
+              <span className="postDate" >{format(post.createdAt,'yyyy-MM-dd')}</span>
               {/* <span className="postDate" >{format(post.createdAt)}</span> */}
           </Link>
 
