@@ -4,21 +4,21 @@ import AuthReducer from "./AuthReducer";
 
 //最初のユーザー状態の定義
 const initialState = {
-  user: JSON.parse(localStorage.getItem("user")) || null, //ローカルストレージにログイン状態を見に行く。投稿後に自動ログアウトするのを防げる
-  // user: {
-  //   _id: "65b8bc11f93dc9ed2d514a65",
-  //   username: "遠藤航",
-  //   email: "yokohama0232009@yahoo.co.jp",
-  //   password: "0232009",
-  //   profilePicture: "/person/endou.png",
-  //   coverPicture: "",
-  //   followers: [],
-  //   followings: [],
-  //   likes: [],
-  //   isAdmin: false,
-  // },
-  isFetching: false, //ログインしようともしてないですね。
-  error: false, //エラーも吐いてないですね。
+  // user: JSON.parse(localStorage.getItem("user")) || null, //ローカルストレージにログイン状態を見に行く。投稿後に自動ログアウトするのを防げる
+  user: {
+    _id: "65b8bc11f93dc9ed2d514a65",
+    username: "遠藤航",
+    email: "yokohama0232009@yahoo.co.jp",
+    password: "0232009",
+    profilePicture: "/person/endou.png",
+    coverPicture: "",
+    followers: [],
+    followings: [],
+    likes: [],
+    isAdmin: false,
+  },
+  isFetching: false, //ログインしようとしているか
+  error: false, 
 };
 
 export const AuthContext = createContext(initialState);
